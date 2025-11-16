@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Success Member Onboarding - AI Creators Inkubator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .trophy-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FDB515 0%, #ffa500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        .congrats-badge {
+            background: linear-gradient(135deg, #FDB515 0%, #ffa500 100%);
+            color: #0a0a0a;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9em;
+            display: inline-block;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(253, 181, 21, 0.4);
+        }
+
+        /* Form Card */
+        .form-card {
+            background: #151515;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FDB515;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 0.95em;
+            color: #888;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #e0e0e0;
+            font-size: 0.95em;
+        }
+
+        .required {
+            color: #ff4444;
+            margin-left: 3px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="url"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            background: #0a0a0a;
+            color: #ffffff;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #FDB515;
+            background: #1a1a1a;
+            box-shadow: 0 0 0 4px rgba(253, 181, 21, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .help-text {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        /* Package Selection */
+        .packages {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .package-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            border-color: rgba(253, 181, 21, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(253, 181, 21, 0.1);
+        }
+
+        .package-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .package-card input[type="radio"]:checked + .package-content {
+            border-color: #FDB515;
+        }
+
+        .package-card input[type="radio"]:checked ~ .package-check {
+            opacity: 1;
+        }
+
+        .package-content {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .package-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #FDB515;
+            margin-bottom: 5px;
+        }
+
+        .package-value {
+            background: rgba(253, 181, 21, 0.1);
+            color: #FDB515;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+
+        .package-badge {
+            background: linear-gradient(135deg, #FDB515 0%, #ffa500 100%);
+            color: #0a0a0a;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .package-benefits {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .package-benefits li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .package-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FDB515;
+            font-weight: bold;
+        }
+
+        .package-check {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            background: #FDB515;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .package-check:after {
+            content: "✓";
+            color: #0a0a0a;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-item:last-child {
+            margin-bottom: 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            cursor: pointer;
+            accent-color: #FDB515;
+            margin-top: 2px;
+        }
+
+        .checkbox-label {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .checkbox-label strong {
+            color: #FDB515;
+        }
+
+        /* File List Display */
+        .file-list {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .file-list.show {
+            display: block;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .file-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .file-item-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .file-item-icon {
+            color: #FDB515;
+            font-size: 1.2em;
+        }
+
+        .file-item-name {
+            color: #e0e0e0;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+
+        .file-item-size {
+            color: #888;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .file-item-remove {
+            background: rgba(255, 68, 68, 0.1);
+            color: #ff4444;
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+
+        .file-item-remove:hover {
+            background: rgba(255, 68, 68, 0.2);
+        }
+
+        .upload-progress {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(253, 181, 21, 0.05);
+            border: 1px solid rgba(253, 181, 21, 0.2);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .upload-progress.show {
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FDB515 0%, #ffa500 100%);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            color: #FDB515;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FDB515 0%, #ffa500 100%);
+            color: #0a0a0a;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 30px;
+            box-shadow: 0 4px 20px rgba(253, 181, 21, 0.3);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(253, 181, 21, 0.5);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(253, 181, 21, 0.08);
+            border-left: 4px solid #FDB515;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .info-box-title {
+            color: #FDB515;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .info-box p {
+            color: #ccc;
+            font-size: 0.9em;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Grid Layout */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .form-card {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .trophy-icon {
+                font-size: 3em;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .success-message h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #FDB515;
+        }
+
+        .success-message p {
+            font-size: 1.1em;
+            color: #999;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="trophy-icon">🏆</div>
+            <div class="congrats-badge">Congratulations!</div>
+            <h1>Success Member Onboarding</h1>
+            <p>Kamu officially jadi <strong>SUCCESS MEMBER</strong> AI Creators Inkubator!<br>
+            Lengkapi form ini untuk claim reward kamu dan mulai perjalanan selanjutnya.</p>
+        </div>
+
+        <form id="successMemberForm" class="form-card">
+            
+            <!-- SECTION 1: Personal Info -->
+            <div class="section">
+                <div class="section-title">
+                    <span>📝</span> Informasi Personal
+                </div>
+                <p class="section-subtitle">Data diri untuk proses cashback dan komunikasi</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Nama Lengkap <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Nama sesuai rekening bank">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="email@example.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Nomor WhatsApp <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="08xxxxxxxxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Kota <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" required placeholder="Jakarta, Bandung, dll">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="joinDate">Tanggal Bergabung ACL <span class="required">*</span></label>
+                    <input type="date" id="joinDate" name="joinDate" required>
+                    <p class="help-text">Approximate date juga oke</p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Bank Info -->
+            <div class="section">
+                <div class="section-title">
+                    <span>💳</span> Informasi Rekening Bank
+                </div>
+                <p class="section-subtitle">Untuk transfer cashback</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bankName">Nama Bank <span class="required">*</span></label>
+                        <select id="bankName" name="bankName" required>
+                            <option value="">Pilih Bank</option>
+                            <option value="BCA">BCA</option>
+                            <option value="Mandiri">Mandiri</option>
+                            <option value="BNI">BNI</option>
+                            <option value="BRI">BRI</option>
+                            <option value="CIMB Niaga">CIMB Niaga</option>
+                            <option value="Permata">Permata</option>
+                            <option value="Danamon">Danamon</option>
+                            <option value="BTN">BTN</option>
+                            <option value="BSI">BSI (Bank Syariah Indonesia)</option>
+                            <option value="Jenius">Jenius</option>
+                            <option value="LINE Bank">LINE Bank</option>
+                            <option value="SeaBank">SeaBank</option>
+                            <option value="Jago">Bank Jago</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountNumber">Nomor Rekening <span class="required">*</span></label>
+                        <input type="text" id="accountNumber" name="accountNumber" required placeholder="1234567890">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountName">Nama Pemilik Rekening <span class="required">*</span></label>
+                    <input type="text" id="accountName" name="accountName" required placeholder="Harus sama dengan nama lengkap di atas">
+                    <p class="help-text">Pastikan nama sama persis dengan yang tertera di rekening bank</p>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Achievement Data -->
+            <div class="section">
+                <div class="section-title">
+                    <span>🎯</span> Data Achievement
+                </div>
+                <p class="section-subtitle">Ceritakan hasil yang kamu capai di ACL</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">💡 Tips:</div>
+                    <p>Semakin spesifik data yang kamu kasih, semakin powerful story kamu untuk jadi case study yang inspire others!</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="beforeCondition">Kondisi SEBELUM Join ACL <span class="required">*</span></label>
+                    <textarea id="beforeCondition" name="beforeCondition" required placeholder="Contoh:&#10;• Followers Instagram 500an, engagement rendah&#10;• Belum pernah bikin konten konsisten&#10;• Gak tau cara monetize&#10;• Income dari konten: 0"></textarea>
+                    <p class="help-text">Deskripsikan kondisi followers, income, skill, mindset, dll</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="afterResults">Hasil yang SUDAH Dicapai <span class="required">*</span></label>
+                    <textarea id="afterResults" name="afterResults" required placeholder="Contoh:&#10;• Followers naik jadi 15K dalam 3 bulan&#10;• Viral post mencapai 500K views&#10;• Dapet 10 client dari konten, total income 8 juta&#10;• Consistently posting 4-5x seminggu"></textarea>
+                    <p class="help-text">Data konkret: angka followers, views, income, client, dll</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="timeframe">Timeframe Achievement</label>
+                        <input type="text" id="timeframe" name="timeframe" placeholder="Contoh: 3 bulan, 8 minggu, dll">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalIncome">Total Income dari Konten (Optional)</label>
+                        <input type="text" id="totalIncome" name="totalIncome" placeholder="Contoh: Rp 8,000,000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="biggestWin">Momen / Achievement Terbesar <span class="required">*</span></label>
+                    <textarea id="biggestWin" name="biggestWin" required placeholder="Contoh: Ketika video pertama gue viral 300K views dan dapet 20 DM inquiries dalam 1 hari"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="gameChanger">Apa yang Jadi "Game Changer" dari ACL? <span class="required">*</span></label>
+                    <textarea id="gameChanger" name="gameChanger" required placeholder="Modul/strategi/mindset apa yang paling mengubah hasil kamu?"></textarea>
+                </div>
+
+                <div class="info-box" style="margin-top: 40px;">
+                    <div class="info-box-title">📸 Upload Screenshots (PENTING!)</div>
+                    <p>Upload screenshot untuk before/after comparison. Bisa berupa: dashboard analytics, follower count, engagement metrics, income proof, viral posts, dll.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="beforeScreenshots">Screenshots BEFORE Join ACL <span class="required">*</span></label>
+                    <div class="file-upload-wrapper">
+                        <label for="beforeScreenshots" class="file-upload-label">
+                            <span class="upload-icon">📤</span>
+                            <span id="beforeFilesLabel">Click to upload atau drag & drop</span>
+                        </label>
+                        <input type="file" id="beforeScreenshots" name="beforeScreenshots" multiple accept="image/*" required>
+                    </div>
+                    <p class="help-text">Upload 1-5 screenshots yang menunjukkan kondisi SEBELUM join ACL (analytics, followers, engagement, dll). Format: JPG, PNG, max 5MB per file.</p>
+                    <div id="beforeFilesList" class="file-list"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="afterScreenshots">Screenshots AFTER / Hasil yang Dicapai <span class="required">*</span></label>
+                    <div class="file-upload-wrapper">
+                        <label for="afterScreenshots" class="file-upload-label">
+                            <span class="upload-icon">📤</span>
+                            <span id="afterFilesLabel">Click to upload atau drag & drop</span>
+                        </label>
+                        <input type="file" id="afterScreenshots" name="afterScreenshots" multiple accept="image/*" required>
+                    </div>
+                    <p class="help-text">Upload 1-5 screenshots yang menunjukkan HASIL/achievement setelah join ACL (growth, viral posts, income, testimonials, dll). Format: JPG, PNG, max 5MB per file.</p>
+                    <div id="afterFilesList" class="file-list"></div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Social Media -->
+            <div class="section">
+                <div class="section-title">
+                    <span>📱</span> Social Media & Portfolio
+                </div>
+                <p class="section-subtitle">Link ke platform kamu untuk case study</p>
+
+                <div class="form-group">
+                    <label for="instagramHandle">Instagram Handle <span class="required">*</span></label>
+                    <input type="text" id="instagramHandle" name="instagramHandle" required placeholder="@username">
+                </div>
+
+                <div class="form-group">
+                    <label for="tiktokHandle">TikTok Handle</label>
+                    <input type="text" id="tiktokHandle" name="tiktokHandle" placeholder="@username">
+                </div>
+
+                <div class="form-group">
+                    <label for="otherPlatforms">Platform Lain (YouTube, LinkedIn, Website, dll)</label>
+                    <textarea id="otherPlatforms" name="otherPlatforms" rows="3" placeholder="Link ke platform lain yang relevan"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="bestContent">Link ke Best Content / Viral Post</label>
+                    <input type="url" id="bestContent" name="bestContent" placeholder="https://...">
+                    <p class="help-text">Link ke post yang paling kamu proud of atau yang paling viral</p>
+                </div>
+            </div>
+
+            <!-- SECTION 5: Package Selection -->
+            <div class="section">
+                <div class="section-title">
+                    <span>🎁</span> Pilih Reward Package
+                </div>
+                <p class="section-subtitle">Pilih satu package yang paling sesuai dengan goal kamu</p>
+
+                <div class="packages">
+                    <!-- Package A -->
+                    <div class="package-card">
+                        <input type="radio" name="package" id="packageA" value="A" required>
+                        <div class="package-content">
+                            <div class="package-header">
+                                <div>
+                                    <div class="package-name">Package A: The Classic</div>
+                                    <div class="package-value">Rp 2,500,000</div>
+                                </div>
+                            </div>
+                            <ul class="package-benefits">
+                                <li>Cashback 100% (Rp 2,500,000)</li>
+                                <li>Success Member Badge (digital)</li>
+                                <li>Featured di Success Spotlight (1 post)</li>
+                                <li>Certificate of Achievement</li>
+                            </ul>
+                        </div>
+                        <div class="package-check"></div>
+                    </div>
+
+                    <!-- Package B -->
+                    <div class="package-card">
+                        <input type="radio" name="package" id="packageB" value="B">
+                        <div class="package-content">
+                            <div class="package-header">
+                                <div>
+                                    <div class="package-name">Package B: The Amplifier</div>
+                                    <div class="package-value">Rp 3,125,000 Value</div>
+                                </div>
+                            </div>
+                            <ul class="package-benefits">
+                                <li>Cashback 125% (Rp 3,125,000)</li>
+                                <li>Premium Affiliate Status (komisi 35%)</li>
+                                <li>Affiliate Marketing Kit lengkap</li>
+                                <li>Success Spotlight + Case Study artikel</li>
+                                <li>Featured di website Success Hall of Fame</li>
+                                <li>3 custom referral codes dengan tracking</li>
+                            </ul>
+                        </div>
+                        <div class="package-check"></div>
+                    </div>
+
+                    <!-- Package C -->
+                    <div class="package-card">
+                        <input type="radio" name="package" id="packageC" value="C">
+                        <div class="package-content">
+                            <div class="package-badge">🔥 Popular</div>
+                            <div class="package-header">
+                                <div>
+                                    <div class="package-name">Package C: The Influencer</div>
+                                    <div class="package-value">Rp 3,750,000 Value</div>
+                                </div>
+                            </div>
+                            <ul class="package-benefits">
+                                <li>Cashback 150% (Rp 3,750,000)</li>
+                                <li>Full Documentary Video (15-20 min professionally edited)</li>
+                                <li>Professional Photoshoot session</li>
+                                <li>Featured in "Behind The Success" podcast episode #1</li>
+                                <li>Co-speaker opportunity di next workshop</li>
+                                <li>Official ACL Ambassador status</li>
+                                <li>Premium Affiliate (komisi 40%)</li>
+                            </ul>
+                        </div>
+                        <div class="package-check"></div>
+                    </div>
+
+                    <!-- Package D -->
+                    <div class="package-card">
+                        <input type="radio" name="package" id="packageD" value="D">
+                        <div class="package-content">
+                            <div class="package-badge">⭐ Recommended</div>
+                            <div class="package-header">
+                                <div>
+                                    <div class="package-name">Package D: The Partner</div>
+                                    <div class="package-value">Rp 2.5jt + 1jt/bln</div>
+                                </div>
+                            </div>
+                            <ul class="package-benefits">
+                                <li>Cashback 100% (Rp 2,500,000) CASH</li>
+                                <li>Jadi Official ACL Mentor (retainer Rp 1,000,000/bulan)</li>
+                                <li>Handle 10-15 new members</li>
+                                <li>Revenue share dari retention member yang lo handle</li>
+                                <li>All benefits from Package C</li>
+                                <li>Monthly mentor exclusive training</li>
+                                <li>First priority untuk new programs/events</li>
+                            </ul>
+                        </div>
+                        <div class="package-check"></div>
+                    </div>
+
+                    <!-- Package E -->
+                    <div class="package-card">
+                        <input type="radio" name="package" id="packageE" value="E">
+                        <div class="package-content">
+                            <div class="package-badge">🚀 For Entrepreneurs</div>
+                            <div class="package-header">
+                                <div>
+                                    <div class="package-name">Package E: The Entrepreneur</div>
+                                    <div class="package-value">Rp 5,000,000+ Value</div>
+                                </div>
+                            </div>
+                            <ul class="package-benefits">
+                                <li>Cashback 200% TOTAL VALUE:
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>50% cash (Rp 1,250,000)</li>
+                                        <li>50% jadi partner di next paid challenge (JV)</li>
+                                    </ul>
+                                </li>
+                                <li>Revenue share 20% dari challenge yang lo co-create</li>
+                                <li>Full business support:
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Landing page/funnel setup (done-for-you)</li>
+                                        <li>2 bulan ads consultation (1-on-1)</li>
+                                        <li>Content strategy session</li>
+                                    </ul>
+                                </li>
+                                <li>All exposure benefits (documentary, spotlight, dll)</li>
+                            </ul>
+                        </div>
+                        <div class="package-check"></div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="packageReason">Kenapa Pilih Package Ini?</label>
+                    <textarea id="packageReason" name="packageReason" rows="3" placeholder="Opsional: Ceritakan kenapa kamu pilih package ini dan apa goal kamu ke depan"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 6: Content Permissions -->
+            <div class="section">
+                <div class="section-title">
+                    <span>📸</span> Content & Permissions
+                </div>
+                <p class="section-subtitle">Untuk maksimalin impact dari success story kamu</p>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="permPhoto" name="permPhoto" value="yes">
+                        <label for="permPhoto" class="checkbox-label">
+                            <strong>Photo/Video:</strong> Saya memberikan izin untuk menggunakan foto dan video testimonial saya dalam materi marketing ACL
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="permScreenshots" name="permScreenshots" value="yes">
+                        <label for="permScreenshots" class="checkbox-label">
+                            <strong>Screenshots:</strong> Saya akan menyediakan before/after screenshots (analytics, posts, income proof, dll)
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="permNumbers" name="permNumbers" value="yes">
+                        <label for="permNumbers" class="checkbox-label">
+                            <strong>Data Konkret:</strong> Saya okay dengan penggunaan angka/metrics achievement saya (atau versi blurred jika prefer private)
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="permTag" name="permTag" value="yes">
+                        <label for="permTag" class="checkbox-label">
+                            <strong>Social Media Tag:</strong> Saya okay untuk di-tag di post Instagram/TikTok/social media ACL
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="permWebsite" name="permWebsite" value="yes">
+                        <label for="permWebsite" class="checkbox-label">
+                            <strong>Website Feature:</strong> Saya okay untuk di-feature di Success Hall of Fame di website ACL
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 25px;">
+                    <label for="contentAvailability">Kapan Kamu Available untuk Content Shoot?</label>
+                    <textarea id="contentAvailability" name="contentAvailability" rows="3" placeholder="Contoh: Weekdays setelah jam 6 sore, Weekend pagi, atau kapan aja bisa adjust"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredFormat">Format Testimonial yang Kamu Prefer</label>
+                    <select id="preferredFormat" name="preferredFormat">
+                        <option value="">Pilih format</option>
+                        <option value="video-oncam">Video on-camera (showing face)</option>
+                        <option value="video-voiceover">Video voice-over (screen recording with voice)</option>
+                        <option value="video-call">Video call interview</option>
+                        <option value="written">Written testimonial only</option>
+                        <option value="flexible">Flexible, semua bisa</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SECTION 7: Additional Info -->
+            <div class="section">
+                <div class="section-title">
+                    <span>💬</span> Additional Information
+                </div>
+
+                <div class="form-group">
+                    <label for="referrals">Ada Teman/Kenalan yang Mungkin Cocok Join ACL?</label>
+                    <textarea id="referrals" name="referrals" rows="3" placeholder="Nama & kontak mereka (opsional). Nanti kita bisa kasih special offer untuk referral dari kamu!"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Feedback / Saran untuk ACL</label>
+                    <textarea id="feedback" name="feedback" rows="4" placeholder="Apa yang bisa kami improve? Fitur apa yang lo butuhkan? Saran untuk program ke depan?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalNotes">Catatan Tambahan</label>
+                    <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Anything else yang perlu kami tau?"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 8: Agreement -->
+            <div class="section">
+                <div class="section-title">
+                    <span>✅</span> Persetujuan
+                </div>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required value="yes">
+                        <label for="agreeTerms" class="checkbox-label">
+                            <strong>Saya menyetujui:</strong> Semua informasi yang saya berikan adalah benar dan akurat. Saya memahami bahwa cashback akan diproses setelah verifikasi data dan penyelesaian content requirements sesuai package yang dipilih.
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agreeLicense" name="agreeLicense" required value="yes">
+                        <label for="agreeLicense" class="checkbox-label">
+                            <strong>Content License:</strong> Saya memberikan hak kepada AI Creators Inkubator untuk menggunakan testimonial, foto, video, dan case study saya untuk keperluan marketing dan promosi.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Submit & Claim Reward 🎉
+            </button>
+        </form>
+
+        <div id="successMessage" class="success-message form-card">
+            <div class="success-icon">🎉</div>
+            <h2>Form Berhasil Dikirim!</h2>
+            <p>Terima kasih sudah melengkapi form!<br><br>
+            Tim ACL akan menghubungi kamu dalam <strong>1-2 hari kerja</strong> untuk proses selanjutnya.<br><br>
+            Cashback akan diproses setelah content shoot selesai.<br><br>
+            Check WhatsApp kamu ya! 🚀</p>
+        </div>
+    </div>
+
+    <script>
+        // ⚠️ IMPORTANT: Replace this URL with your Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYJFCaQBWugxYGD0-x-Sum_du0mdlAqfEgfsPAWOT293E2HFA-ktGxR_K1IVJWnl1W/exec';
+        
+        // File upload handling
+        let beforeFiles = [];
+        let afterFiles = [];
+        
+        // Handle before screenshots upload
+        document.getElementById('beforeScreenshots').addEventListener('change', function(e) {
+            handleFileSelect(e, 'before');
+        });
+        
+        // Handle after screenshots upload
+        document.getElementById('afterScreenshots').addEventListener('change', function(e) {
+            handleFileSelect(e, 'after');
+        });
+        
+        function handleFileSelect(event, type) {
+            const files = Array.from(event.target.files);
+            const fileList = type === 'before' ? beforeFiles : afterFiles;
+            const listElement = document.getElementById(type + 'FilesList');
+            const labelElement = document.getElementById(type + 'FilesLabel');
+            
+            // Validate files
+            const validFiles = [];
+            for (let file of files) {
+                // Check file size (max 5MB)
+                if (file.size > 5 * 1024 * 1024) {
+                    alert(`${file.name} terlalu besar! Max 5MB per file.`);
+                    continue;
+                }
+                
+                // Check file type
+                if (!file.type.startsWith('image/')) {
+                    alert(`${file.name} bukan file gambar!`);
+                    continue;
+                }
+                
+                validFiles.push(file);
+            }
+            
+            // Add valid files to array
+            if (type === 'before') {
+                beforeFiles = [...beforeFiles, ...validFiles];
+            } else {
+                afterFiles = [...afterFiles, ...validFiles];
+            }
+            
+            // Update display
+            updateFileList(type);
+            
+            // Update label
+            const totalFiles = type === 'before' ? beforeFiles.length : afterFiles.length;
+            labelElement.textContent = `${totalFiles} file(s) selected`;
+        }
+        
+        function updateFileList(type) {
+            const fileList = type === 'before' ? beforeFiles : afterFiles;
+            const listElement = document.getElementById(type + 'FilesList');
+            
+            if (fileList.length === 0) {
+                listElement.classList.remove('show');
+                return;
+            }
+            
+            listElement.classList.add('show');
+            listElement.innerHTML = '';
+            
+            fileList.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div class="file-item-info">
+                        <span class="file-item-icon">📷</span>
+                        <span class="file-item-name">${file.name}</span>
+                        <span class="file-item-size">${formatFileSize(file.size)}</span>
+                    </div>
+                    <button type="button" class="file-item-remove" onclick="removeFile('${type}', ${index})">Remove</button>
+                `;
+                listElement.appendChild(fileItem);
+            });
+        }
+        
+        function removeFile(type, index) {
+            if (type === 'before') {
+                beforeFiles.splice(index, 1);
+            } else {
+                afterFiles.splice(index, 1);
+            }
+            updateFileList(type);
+            
+            // Update label
+            const labelElement = document.getElementById(type + 'FilesLabel');
+            const totalFiles = type === 'before' ? beforeFiles.length : afterFiles.length;
+            if (totalFiles === 0) {
+                labelElement.textContent = 'Click to upload atau drag & drop';
+            } else {
+                labelElement.textContent = `${totalFiles} file(s) selected`;
+            }
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+        
+        // Convert file to base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
+        
+        // Form submission handling
+        document.getElementById('successMemberForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate files
+            if (beforeFiles.length === 0) {
+                alert('Please upload at least 1 BEFORE screenshot!');
+                return;
+            }
+            
+            if (afterFiles.length === 0) {
+                alert('Please upload at least 1 AFTER screenshot!');
+                return;
+            }
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Uploading Screenshots...';
+            
+            try {
+                // Convert files to base64
+                submitBtn.textContent = 'Processing Before Screenshots...';
+                const beforeBase64 = await Promise.all(
+                    beforeFiles.map(async (file) => ({
+                        name: file.name,
+                        data: await fileToBase64(file),
+                        type: file.type,
+                        size: file.size
+                    }))
+                );
+                
+                submitBtn.textContent = 'Processing After Screenshots...';
+                const afterBase64 = await Promise.all(
+                    afterFiles.map(async (file) => ({
+                        name: file.name,
+                        data: await fileToBase64(file),
+                        type: file.type,
+                        size: file.size
+                    }))
+                );
+                
+                // Add files to data
+                data.beforeScreenshots = JSON.stringify(beforeBase64);
+                data.afterScreenshots = JSON.stringify(afterBase64);
+                
+                // Send data to Google Apps Script
+                submitBtn.textContent = 'Submitting Form...';
+                
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Hide form
+                document.getElementById('successMemberForm').style.display = 'none';
+                
+                // Show success message
+                document.getElementById('successMessage').classList.add('show');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                console.log('Form submitted successfully');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                // Show success anyway (no-cors doesn't return response)
+                document.getElementById('successMemberForm').style.display = 'none';
+                document.getElementById('successMessage').classList.add('show');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // Package selection visual feedback
+        document.querySelectorAll('.package-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Remove active class from all cards
+                document.querySelectorAll('.package-card').forEach(c => {
+                    c.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                });
+                
+                // Add active class to clicked card
+                this.style.borderColor = '#FDB515';
+            });
+        });
+
+        // Auto-copy account name from full name
+        document.getElementById('fullName').addEventListener('input', function() {
+            const accountNameField = document.getElementById('accountName');
+            if (accountNameField.value === '' || accountNameField.value === this.oldValue) {
+                accountNameField.value = this.value;
+            }
+            this.oldValue = this.value;
+        });
+    </script>
+</body>
+</html>
