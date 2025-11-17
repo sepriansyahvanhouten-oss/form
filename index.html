@@ -690,34 +690,24 @@
                 </div>
 
                 <div class="info-box" style="margin-top: 40px;">
-                    <div class="info-box-title">📸 Upload Screenshots (PENTING!)</div>
-                    <p>Upload screenshot untuk before/after comparison. Bisa berupa: dashboard analytics, follower count, engagement metrics, income proof, viral posts, dll.</p>
+                    <div class="info-box-title">📸 Screenshots BEFORE & AFTER (PENTING!)</div>
+                    <p><strong>Setelah submit form ini, kamu akan dikirim email dengan instruksi untuk mengirimkan screenshots.</strong></p>
+                    <p style="margin-top: 10px;">Screenshots yang dibutuhkan:</p>
+                    <p style="margin-left: 15px;">
+                    • <strong>BEFORE:</strong> Analytics, followers, engagement SEBELUM join ACL<br>
+                    • <strong>AFTER:</strong> Growth, viral posts, income proof, hasil yang dicapai
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <label for="beforeScreenshots">Screenshots BEFORE Join ACL <span class="required">*</span></label>
-                    <div class="file-upload-wrapper">
-                        <label for="beforeScreenshots" class="file-upload-label">
-                            <span class="upload-icon">📤</span>
-                            <span id="beforeFilesLabel">Click to upload atau drag & drop</span>
-                        </label>
-                        <input type="file" id="beforeScreenshots" name="beforeScreenshots" multiple accept="image/*" required>
-                    </div>
-                    <p class="help-text">Upload 1-5 screenshots yang menunjukkan kondisi SEBELUM join ACL (analytics, followers, engagement, dll). Format: JPG, PNG, max 5MB per file.</p>
-                    <div id="beforeFilesList" class="file-list"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="afterScreenshots">Screenshots AFTER / Hasil yang Dicapai <span class="required">*</span></label>
-                    <div class="file-upload-wrapper">
-                        <label for="afterScreenshots" class="file-upload-label">
-                            <span class="upload-icon">📤</span>
-                            <span id="afterFilesLabel">Click to upload atau drag & drop</span>
-                        </label>
-                        <input type="file" id="afterScreenshots" name="afterScreenshots" multiple accept="image/*" required>
-                    </div>
-                    <p class="help-text">Upload 1-5 screenshots yang menunjukkan HASIL/achievement setelah join ACL (growth, viral posts, income, testimonials, dll). Format: JPG, PNG, max 5MB per file.</p>
-                    <div id="afterFilesList" class="file-list"></div>
+                    <label for="screenshotsConfirm">Konfirmasi Screenshots <span class="required">*</span></label>
+                    <select id="screenshotsConfirm" name="screenshotsConfirm" required>
+                        <option value="">Pilih...</option>
+                        <option value="ready">Saya sudah prepare screenshots dan siap kirim via email</option>
+                        <option value="need-time">Saya butuh waktu 1-2 hari untuk prepare screenshots</option>
+                        <option value="need-help">Saya butuh bantuan untuk prepare screenshots</option>
+                    </select>
+                    <p class="help-text">Jangan khawatir! Setelah submit, kamu akan dapat email dengan detail lengkap dan alamat email untuk kirim screenshots.</p>
                 </div>
             </div>
 
@@ -770,123 +760,23 @@
                             </div>
                             <ul class="package-benefits">
                                 <li>Cashback 100% (Rp 2,500,000)</li>
-                                <li>Success Member Badge (digital)</li>
-                                <li>Featured di Success Spotlight (1 post)</li>
-                                <li>Certificate of Achievement</li>
-                            </ul>
-                        </div>
-                        <div class="package-check"></div>
-                    </div>
-
-                    <!-- Package B -->
-                    <div class="package-card">
-                        <input type="radio" name="package" id="packageB" value="B">
-                        <div class="package-content">
-                            <div class="package-header">
-                                <div>
-                                    <div class="package-name">Package B: The Amplifier</div>
-                                    <div class="package-value">Rp 3,125,000 Value</div>
-                                </div>
-                            </div>
-                            <ul class="package-benefits">
-                                <li>Cashback 125% (Rp 3,125,000)</li>
                                 <li>Premium Affiliate Status (komisi 35%)</li>
-                                <li>Affiliate Marketing Kit lengkap</li>
-                                <li>Success Spotlight + Case Study artikel</li>
-                                <li>Featured di website Success Hall of Fame</li>
-                                <li>3 custom referral codes dengan tracking</li>
-                            </ul>
-                        </div>
-                        <div class="package-check"></div>
-                    </div>
-
-                    <!-- Package C -->
-                    <div class="package-card">
-                        <input type="radio" name="package" id="packageC" value="C">
-                        <div class="package-content">
-                            <div class="package-badge">🔥 Popular</div>
-                            <div class="package-header">
-                                <div>
-                                    <div class="package-name">Package C: The Influencer</div>
-                                    <div class="package-value">Rp 3,750,000 Value</div>
-                                </div>
-                            </div>
-                            <ul class="package-benefits">
-                                <li>Cashback 150% (Rp 3,750,000)</li>
-                                <li>Full Documentary Video (15-20 min professionally edited)</li>
-                                <li>Professional Photoshoot session</li>
-                                <li>Featured in "Behind The Success" podcast episode #1</li>
-                                <li>Co-speaker opportunity di next workshop</li>
+                                <li>Featured di Success Spotlight (1 post di buat oleh tim acl)</li>
+                                <li>Featured di website ACL</li>
+                                <li>Certificate of Achievement</li>
+                                <li>Success Story video upload di sosial media ACL (dibuat oleh achiever)</li>
+                                <li>Full Documentary Video (5-10 min tanpa edit di buat oleh achiever)</li>
+                                <li>Featured in "Behind The Success" podcast episode</li>
+                                <li>Co-speaker di next workshop (waktu menyesuaikan)</li>
                                 <li>Official ACL Ambassador status</li>
-                                <li>Premium Affiliate (komisi 40%)</li>
-                            </ul>
-                        </div>
-                        <div class="package-check"></div>
-                    </div>
-
-                    <!-- Package D -->
-                    <div class="package-card">
-                        <input type="radio" name="package" id="packageD" value="D">
-                        <div class="package-content">
-                            <div class="package-badge">⭐ Recommended</div>
-                            <div class="package-header">
-                                <div>
-                                    <div class="package-name">Package D: The Partner</div>
-                                    <div class="package-value">Rp 2.5jt + 1jt/bln</div>
-                                </div>
-                            </div>
-                            <ul class="package-benefits">
-                                <li>Cashback 100% (Rp 2,500,000) CASH</li>
-                                <li>Jadi Official ACL Mentor (retainer Rp 1,000,000/bulan)</li>
-                                <li>Handle 10-15 new members</li>
-                                <li>Revenue share dari retention member yang lo handle</li>
-                                <li>All benefits from Package C</li>
-                                <li>Monthly mentor exclusive training</li>
+                                <li>Jadi Official ACL Mentor</li>
+                                <li>Revenue share dari member yang lo handle</li>
                                 <li>First priority untuk new programs/events</li>
-                            </ul>
-                        </div>
-                        <div class="package-check"></div>
-                    </div>
-
-                    <!-- Package E -->
-                    <div class="package-card">
-                        <input type="radio" name="package" id="packageE" value="E">
-                        <div class="package-content">
-                            <div class="package-badge">🚀 For Entrepreneurs</div>
-                            <div class="package-header">
-                                <div>
-                                    <div class="package-name">Package E: The Entrepreneur</div>
-                                    <div class="package-value">Rp 5,000,000+ Value</div>
-                                </div>
-                            </div>
-                            <ul class="package-benefits">
-                                <li>Cashback 200% TOTAL VALUE:
-                                    <ul style="margin-left: 20px; margin-top: 5px;">
-                                        <li>50% cash (Rp 1,250,000)</li>
-                                        <li>50% jadi partner di next paid challenge (JV)</li>
-                                    </ul>
-                                </li>
-                                <li>Revenue share 20% dari challenge yang lo co-create</li>
                                 <li>Full business support:
-                                    <ul style="margin-left: 20px; margin-top: 5px;">
-                                        <li>Landing page/funnel setup (done-for-you)</li>
-                                        <li>2 bulan ads consultation (1-on-1)</li>
+                                        <li>1 bulan consultation (1-on-1)</li>
                                         <li>Content strategy session</li>
-                                    </ul>
-                                </li>
-                                <li>All exposure benefits (documentary, spotlight, dll)</li>
-                            </ul>
-                        </div>
-                        <div class="package-check"></div>
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-top: 30px;">
-                    <label for="packageReason">Kenapa Pilih Package Ini?</label>
-                    <textarea id="packageReason" name="packageReason" rows="3" placeholder="Opsional: Ceritakan kenapa kamu pilih package ini dan apa goal kamu ke depan"></textarea>
-                </div>
-            </div>
-
+                                        <li>AI/Tech strategy session</li>
+                                        <li>semua by request</li>
             <!-- SECTION 6: Content Permissions -->
             <div class="section">
                 <div class="section-title">
@@ -1003,146 +893,34 @@
             <div class="success-icon">🎉</div>
             <h2>Form Berhasil Dikirim!</h2>
             <p>Terima kasih sudah melengkapi form!<br><br>
+            
+            <strong style="color: #FDB515;">📸 NEXT STEP PENTING:</strong><br><br>
+            
+            Sekarang, tolong kirim <strong>BEFORE & AFTER screenshots</strong> kamu ke:<br>
+            <strong style="font-size: 1.2em; color: #FDB515;">ruangsepri@aicreatorlabs.id</strong><br><br>
+            
+            <strong>Email Subject:</strong> Success Member - [NAMA KAMU]<br><br>
+            
+            <strong>Screenshots yang dibutuhkan:</strong><br>
+            ✓ BEFORE: Analytics/followers sebelum join ACL (2-5 screenshots)<br>
+            ✓ AFTER: Growth/viral posts/income proof (2-5 screenshots)<br><br>
+            
+            Format: JPG atau PNG, bisa di-attach langsung atau Google Drive link.<br><br>
+            
             Tim ACL akan menghubungi kamu dalam <strong>1-2 hari kerja</strong> untuk proses selanjutnya.<br><br>
+            
             Cashback akan diproses setelah content shoot selesai.<br><br>
-            Check WhatsApp kamu ya! 🚀</p>
+            Check WhatsApp & email kamu ya! 🚀</p>
         </div>
     </div>
 
     <script>
         // ⚠️ IMPORTANT: Replace this URL with your Google Apps Script Web App URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5O4pnCMPcSfy2DAogqwfO9IUlpwKLkIEfiW-dfmwu-XK9v1D6A1WtsxkXFrffLa5C/exec';
-        
-        // File upload handling
-        let beforeFiles = [];
-        let afterFiles = [];
-        
-        // Handle before screenshots upload
-        document.getElementById('beforeScreenshots').addEventListener('change', function(e) {
-            handleFileSelect(e, 'before');
-        });
-        
-        // Handle after screenshots upload
-        document.getElementById('afterScreenshots').addEventListener('change', function(e) {
-            handleFileSelect(e, 'after');
-        });
-        
-        function handleFileSelect(event, type) {
-            const files = Array.from(event.target.files);
-            const fileList = type === 'before' ? beforeFiles : afterFiles;
-            const listElement = document.getElementById(type + 'FilesList');
-            const labelElement = document.getElementById(type + 'FilesLabel');
-            
-            // Validate files
-            const validFiles = [];
-            for (let file of files) {
-                // Check file size (max 5MB)
-                if (file.size > 5 * 1024 * 1024) {
-                    alert(`${file.name} terlalu besar! Max 5MB per file.`);
-                    continue;
-                }
-                
-                // Check file type
-                if (!file.type.startsWith('image/')) {
-                    alert(`${file.name} bukan file gambar!`);
-                    continue;
-                }
-                
-                validFiles.push(file);
-            }
-            
-            // Add valid files to array
-            if (type === 'before') {
-                beforeFiles = [...beforeFiles, ...validFiles];
-            } else {
-                afterFiles = [...afterFiles, ...validFiles];
-            }
-            
-            // Update display
-            updateFileList(type);
-            
-            // Update label
-            const totalFiles = type === 'before' ? beforeFiles.length : afterFiles.length;
-            labelElement.textContent = `${totalFiles} file(s) selected`;
-        }
-        
-        function updateFileList(type) {
-            const fileList = type === 'before' ? beforeFiles : afterFiles;
-            const listElement = document.getElementById(type + 'FilesList');
-            
-            if (fileList.length === 0) {
-                listElement.classList.remove('show');
-                return;
-            }
-            
-            listElement.classList.add('show');
-            listElement.innerHTML = '';
-            
-            fileList.forEach((file, index) => {
-                const fileItem = document.createElement('div');
-                fileItem.className = 'file-item';
-                fileItem.innerHTML = `
-                    <div class="file-item-info">
-                        <span class="file-item-icon">📷</span>
-                        <span class="file-item-name">${file.name}</span>
-                        <span class="file-item-size">${formatFileSize(file.size)}</span>
-                    </div>
-                    <button type="button" class="file-item-remove" onclick="removeFile('${type}', ${index})">Remove</button>
-                `;
-                listElement.appendChild(fileItem);
-            });
-        }
-        
-        function removeFile(type, index) {
-            if (type === 'before') {
-                beforeFiles.splice(index, 1);
-            } else {
-                afterFiles.splice(index, 1);
-            }
-            updateFileList(type);
-            
-            // Update label
-            const labelElement = document.getElementById(type + 'FilesLabel');
-            const totalFiles = type === 'before' ? beforeFiles.length : afterFiles.length;
-            if (totalFiles === 0) {
-                labelElement.textContent = 'Click to upload atau drag & drop';
-            } else {
-                labelElement.textContent = `${totalFiles} file(s) selected`;
-            }
-        }
-        
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-        }
-        
-        // Convert file to base64
-        function fileToBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = error => reject(error);
-            });
-        }
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby3rohNsmfsqjI09bvM0C_4jQzzaiSso-nFxB8DT2KerrMoIFRHWEHyT_O8-ZKdBmJH/exec';
         
         // Form submission handling
-        document.getElementById('successMemberForm').addEventListener('submit', async function(e) {
+        document.getElementById('successMemberForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Validate files
-            if (beforeFiles.length === 0) {
-                alert('Please upload at least 1 BEFORE screenshot!');
-                return;
-            }
-            
-            if (afterFiles.length === 0) {
-                alert('Please upload at least 1 AFTER screenshot!');
-                return;
-            }
             
             // Get form data
             const formData = new FormData(this);
@@ -1150,48 +928,19 @@
             
             // Show loading state
             const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Uploading Screenshots...';
+            submitBtn.textContent = 'Submitting...';
             
-            try {
-                // Convert files to base64
-                submitBtn.textContent = 'Processing Before Screenshots...';
-                const beforeBase64 = await Promise.all(
-                    beforeFiles.map(async (file) => ({
-                        name: file.name,
-                        data: await fileToBase64(file),
-                        type: file.type,
-                        size: file.size
-                    }))
-                );
-                
-                submitBtn.textContent = 'Processing After Screenshots...';
-                const afterBase64 = await Promise.all(
-                    afterFiles.map(async (file) => ({
-                        name: file.name,
-                        data: await fileToBase64(file),
-                        type: file.type,
-                        size: file.size
-                    }))
-                );
-                
-                // Add files to data
-                data.beforeScreenshots = JSON.stringify(beforeBase64);
-                data.afterScreenshots = JSON.stringify(afterBase64);
-                
-                // Send data to Google Apps Script
-                submitBtn.textContent = 'Submitting Form...';
-                
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
+            // Send data to Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
                 // Hide form
                 document.getElementById('successMemberForm').style.display = 'none';
                 
@@ -1202,15 +951,15 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 
                 console.log('Form submitted successfully');
-                
-            } catch (error) {
+            })
+            .catch(error => {
                 console.error('Error:', error);
                 
-                // Show success anyway (no-cors doesn't return response)
+                // Even with error, show success (because no-cors mode doesn't return response)
                 document.getElementById('successMemberForm').style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+            });
         });
 
         // Package selection visual feedback
